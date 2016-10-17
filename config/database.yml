@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: servicios_en_un_click_development
+  database: putas_ya_development
   username: carlosgomez
   password: 221519
 
@@ -59,8 +59,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: servicios_en_un_click_test
-  username: ubuntu
+  database: putas_ya_test
+  username: carlosgomez
   password: <%= ENV['SERVICIOS_EN_UN_CLICK_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: servicios_en_un_click_production
-  username: ubuntu
+  database: putas_ya_production
+  username: carlosgomez
   password: <%= ENV['SERVICIOS_EN_UN_CLICK_DATABASE_PASSWORD'] %>
