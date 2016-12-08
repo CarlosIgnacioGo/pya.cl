@@ -6,7 +6,6 @@
                   <div class="thumbnail">
                       <%= image_tag service.try(:photo), class: 'img-search' %>
                       <div class="caption">
-                          <h4><%= link_to truncate(service.title, length: 19), service_path(service) %></h4>
                           <p><%= truncate(service.description, length: 150) %></p>
 
                       </div>
@@ -22,7 +21,7 @@
 </div>
 
 <script>
-    var tags = <%= Service.order(:title).published.map(&:title).to_json.html_safe %>
+    var tags = <%#= Service.order(:title).published.map(&:title).to_json.html_safe %>
 
     $( "#input_search" ).autocomplete({
       source: tags
