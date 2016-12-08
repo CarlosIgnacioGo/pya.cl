@@ -29,50 +29,6 @@
     <%= f.label :phone, 'Celular'%><br>
     <%= f.text_field :phone, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :telephone, 'Telefono' %><br>
-    <%= f.text_field :telephone, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :website, 'Sitio web' %><br>
-    <%= f.text_field :website, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :monday, 'Días de atención' %><br>
-
-    <%= f.check_box :monday %>
-    <%= f.label :monday, 'Lunes' %><br>
-
-    <%= f.check_box :tuesday %>
-    <%= f.label :tuesday, 'Martes' %><br>
-
-    <%= f.check_box :wednesday %>
-    <%= f.label :wednesday, 'Miercoles' %><br>
-
-    <%= f.check_box :thursday %>
-    <%= f.label :thursday, 'Jueves' %><br>
-
-    <%= f.check_box :friday %>
-    <%= f.label :friday, 'Viernes' %><br>
-
-    <%= f.check_box :saturday %>
-    <%= f.label :saturday, 'Sabado' %><br>
-
-    <%= f.check_box :sunday %>
-    <%= f.label :sunday, 'Domingo' %><br>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :morning_start, "Horario de mañana" %><br>
-    <p>Desde: </p><%= f.time_select :morning_start, {:default => {:hour => '10', :minute => '30'}} %>
-    <p>Hasta: </p><%= f.time_select :morning_end, {:default => {:hour => '10', :minute => '30'}} %>
-  </div>
-  
-  <div class="form-group">
-  <%= f.label :afternoon_start, "Horario de tarde" %><br>
-    <p>Desde: </p><%= f.time_select :afternoon_start, {:default => {:hour => '10', :minute => '30'}} %>
-    <p>Hasta: </p><%= f.time_select :afternoon_end, {:default => {:hour => '10', :minute => '30'}} %>
-  </div>
 
   <div class="form-group">
     <%= f.label :photo, class: 'label-file btn btn-success' do %>
@@ -82,13 +38,7 @@
     <%= f.file_field :photo, class: 'input-file'%>
   </div>
   <div class="form-group">
-    <h3>Pon tu servicios en una o varios categorias</h3>
-    <% @category.each do |category| %>
-      <li>
-        <%= f.check_box 'category_ids', {multiple: true}, category.id, [] %>
-        <span><%=category.name%></span>
-      </li>
-    <%end%>
+    <%= f.select :smoking, ['Si','No'] %>
   </div>
   <div class="form-group">
     <%= f.submit 'Subir servicio', class: 'btn btn-primary' %>

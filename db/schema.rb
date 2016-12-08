@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011212529) do
+ActiveRecord::Schema.define(version: 20161017234735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,27 +78,16 @@ ActiveRecord::Schema.define(version: 20161011212529) do
     t.string   "address"
     t.string   "email"
     t.string   "phone"
-    t.integer  "visit_count",     default: 0
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.integer  "visit_count", default: 0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "user_id"
     t.string   "photo"
-    t.string   "state",           default: "in_draft"
-    t.string   "telephone"
-    t.string   "website"
-    t.boolean  "monday"
-    t.boolean  "tuesday"
-    t.boolean  "wednesday"
-    t.boolean  "thursday"
-    t.boolean  "friday"
-    t.boolean  "saturday"
-    t.boolean  "sunday"
-    t.datetime "date"
-    t.time     "start"
-    t.time     "morning_start"
-    t.time     "morning_end"
-    t.time     "afternoon_end"
-    t.time     "afternoon_start"
+    t.string   "state",       default: "in_draft"
+    t.integer  "age"
+    t.integer  "weight"
+    t.string   "smoking"
+    t.string   "price"
   end
 
   add_index "services", ["user_id"], name: "index_services_on_user_id", using: :btree
