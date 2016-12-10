@@ -622,7 +622,7 @@ padding-top:1em;
 }
 /*--about--*/
 .header2{
-   background:url(../images/banner33.jpg) no-repeat 0px 0px;
+   background:url("<%= asset_path 'banner33.jpg' %>") no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size: cover;
 -moz-background-size: cover;
@@ -1868,10 +1868,9 @@ a.cpns:hover{
 }
 /*--registration--*/
 .registration-form,.login{
-padding: 4em 0;
 }
 .login{
-	min-height:700px;
+	min-height:450px;
 }
 .reg{
 margin-top:2em;
