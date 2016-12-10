@@ -4,30 +4,14 @@
      <div class="container">
        <h3><%= category.name %></h3>
        <div class="about-grids">
-         <div class="col-md-2 about-grid">
-           <img src="images/ab1.jpg" class="img-responsive" alt=""/>
-           <a href="blog-single.html"><h4 class="text-center">Kurtis & Kurtas</h4></a>
-         </div>
-         <div class="col-md-2 about-grid">
-           <img src="images/ab2.jpg" class="img-responsive" alt=""/>
-           <a href="blog-single.html"><h4 class="text-center">Salwars</h4></a>
-         </div>
-         <div class="col-md-2 about-grid pot-2">
-           <img src="images/ab3.jpg" class="img-responsive" alt=""/>
-           <a href="blog-single.html"><h4 class="text-center">Desi Look</h4></a>
-         </div>
-         <div class="col-md-2 about-grid pot-1">
-           <img src="images/ab5.jpg" class="img-responsive" alt=""/>
-           <a href="blog-single.html"><h4 class="text-center">Designersaree</h4></a>
-         </div>
-         <div class="col-md-2 about-grid pot-1">
-           <img src="images/ab4.jpg" class="img-responsive" alt=""/>
-           <a href="blog-single.html"><h4 class="text-center">Designersaree</h4></a>
-         </div>
-         <div class="col-md-2 about-grid pot-1">
-           <img src="images/ab6.jpg" class="img-responsive" alt=""/>
-           <a href="blog-single.html"><h4 class="text-center">Designersaree</h4></a>
-         </div>
+        <% category.services.published.each do |service| %>
+          <div class="col-md-2 about-grid">
+            <img src="images/ab1.jpg" class="img-responsive" alt=""/>
+            <%= link_to service_path(service) do %>
+              <h4 class="text-center"><%= service.phone %></h4>
+            <% end %>
+          </div>
+        <% end %>
        </div>
      </div>
    <% end %>
