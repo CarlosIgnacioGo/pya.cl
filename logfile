@@ -115,3 +115,7 @@ LOG:  database system was shut down at 2016-10-08 19:18:44 CLST
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was shut down at 2016-12-09 21:35:08 CLST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
