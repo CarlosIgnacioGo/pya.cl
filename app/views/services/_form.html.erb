@@ -19,7 +19,7 @@
     <%= f.label :description, 'Descripción' %><br>
     <%= f.text_area :description, class: 'form-control', style: 'width:70%;' %>
   </div>
-  <div class="form-group">
+  <div class="form-groupº">
     <%= f.label :phone, 'Celular'%><br>
     <%= f.text_field :phone, class: 'form-control' %>
   </div>
@@ -45,6 +45,37 @@
     <%end%>
     <br>
     <%= f.file_field :photo, class: 'input-file'%>
+  </div>
+  <div class="form-group">
+      <%= f.label :photo_2, class: 'label-file btn btn-success' do %>
+      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+    <%end%>
+    <br>
+    <%= f.file_field :photo_2, class: 'input-file'%>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :photo_3, class: 'label-file btn btn-success' do %>
+      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+    <%end%>
+    <br>
+    <%= f.file_field :photo_3, class: 'input-file'%>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :photo_4, class: 'label-file btn btn-success' do %>
+      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+    <%end%>
+    <br>
+    <%= f.file_field :photo_4, class: 'input-file'%>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :photo_5, class: 'label-file btn btn-success' do %>
+      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+    <%end%>
+    <br>
+    <%= f.file_field :photo_5, class: 'input-file'%>
   </div>
   <div class="form-group">
     <%= f.label :smoking %>
