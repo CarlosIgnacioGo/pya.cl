@@ -70,7 +70,11 @@
            </div>
            <div class="details-left-info">
               <h3><%= @service.name %></h3>
-              <h4>Pellentesque pretium </h4>              
+              <h4>
+                <% @service.categories.each do |category| %>
+                  <%= category.name %>
+                <%end%>  
+              </h4>            
               <p>$<%= @service.price %></p>
               <div class="flower-type">
                 <div class="row">

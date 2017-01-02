@@ -8,7 +8,7 @@ ActiveAdmin.register Service do
 # or
 #
   permit_params do
-    permitted = [:title, :description,:address,:email,:phone,:photo]
+    permitted = [:name, :photo, :photo_2, :photo_3, :photo_4, :photo_5, :description, :email, :phone, :age, :weight, :price ,:smoking ]
   end   
 
   member_action :unpublish do
@@ -28,7 +28,7 @@ ActiveAdmin.register Service do
   index do
     selectable_column
     id_column
-    column :title    
+    column :name  
     column  "Estado" do |service|
       if service.published?
         link_to 'Despublicar', unpublish_admin_service_path(service)

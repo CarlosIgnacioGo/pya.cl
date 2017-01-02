@@ -40,46 +40,55 @@
     <%= f.text_field :email, class: 'form-control', style: 'width:70%;' %>
   </div>
   <div class="form-group">
-      <%= f.label :photo, class: 'label-file btn btn-success' do %>
-      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
-    <%end%>
+      <%= f.label :photo, class: 'label-file btn btn-primary photo_label_1' do %>
+        <span class="glyphicon glyphicon-camera"></span> <span id="photo_1"> Sube una foto de tu servicio</span> 
+      <%end%>
     <br>
-    <%= f.file_field :photo, class: 'input-file'%>
+    <%= f.file_field :photo ,class: 'input-file photo_1' %>
   </div>
   <div class="form-group">
-      <%= f.label :photo_2, class: 'label-file btn btn-success' do %>
-      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+      <%= f.label :photo_2, class: 'label-file btn btn-primary photo_label_2' do %>
+      <span class="glyphicon glyphicon-camera"></span> <span id="photo_2"> Sube una foto de tu servicio</span> 
     <%end%>
     <br>
-    <%= f.file_field :photo_2, class: 'input-file'%>
-  </div>
-
-  <div class="form-group">
-      <%= f.label :photo_3, class: 'label-file btn btn-success' do %>
-      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
-    <%end%>
-    <br>
-    <%= f.file_field :photo_3, class: 'input-file'%>
+    <%= f.file_field :photo_2, class: 'input-file photo_2'%>
   </div>
 
   <div class="form-group">
-      <%= f.label :photo_4, class: 'label-file btn btn-success' do %>
-      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+      <%= f.label :photo_3, class: 'label-file btn btn-primary photo_label_3' do %>
+      <span class="glyphicon glyphicon-camera"></span> <span id="photo_3"> Sube una foto de tu servicio</span> 
     <%end%>
     <br>
-    <%= f.file_field :photo_4, class: 'input-file'%>
+    <%= f.file_field :photo_3, class: 'input-file photo_3'%>
   </div>
 
   <div class="form-group">
-      <%= f.label :photo_5, class: 'label-file btn btn-success' do %>
-      <span class="glyphicon glyphicon-camera"></span> Sube una foto de tu servicio
+      <%= f.label :photo_4, class: 'label-file btn btn-primary photo_label_4' do %>
+      <span class="glyphicon glyphicon-camera"></span> <span id="photo_4"> Sube una foto de tu servicio</span> 
     <%end%>
     <br>
-    <%= f.file_field :photo_5, class: 'input-file'%>
+    <%= f.file_field :photo_4, class: 'input-file photo_4'%>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :photo_5, class: 'label-file btn btn-primary photo_label_5' do %>
+      <span class="glyphicon glyphicon-camera"></span> <span id="photo_5"> Sube una foto de tu servicio</span> 
+    <%end%>
+    <br>
+    <%= f.file_field :photo_5, class: 'input-file photo_5'%>
   </div>
   <div class="form-group">
     <%= f.label :smoking %>
     <%= f.select :smoking, ['No','Si'] %>
+  </div>
+  <div class="form-group">
+    <h3>Servicios que presta</h3>
+    <% @additionals.each do |additional| %>
+      <li>
+        <%= f.check_box 'additional_ids', {multiple: true}, additional.id, [] %>
+        <span><%=additional.name%></span>
+      </li>
+    <%end%>
   </div>
   <div class="form-group">
     <h3>Pon tu servicios en una o varios categorias</h3>
@@ -94,6 +103,33 @@
     <%= f.submit 'Subir servicio', class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<script>
+   $(".photo_1").change(function (){
+      $("#photo_1").text("Foto Subida")
+      $(".photo_label_1").attr("class","btn btn-success")
+   });
+
+   $(".photo_2").change(function (){
+      $("#photo_2").text("Foto Subida")
+      $(".photo_label_2").attr("class","btn btn-success")
+   });
+
+   $(".photo_3").change(function (){
+      $("#photo_3").text("Foto Subida")
+      $(".photo_label_3").attr("class","btn btn-success")
+   });
+
+   $(".photo_4").change(function (){
+      $("#photo_4").text("Foto Subida")
+      $(".photo_label_4").attr("class","btn btn-success")
+   });
+
+   $(".photo_5").change(function (){
+      $("#photo_5").text("Foto Subida")
+      $(".photo_label_5").attr("class","btn btn-success")
+   });
+</script>
   
 
 

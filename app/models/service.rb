@@ -3,6 +3,7 @@ class Service < ActiveRecord::Base
 
 	has_many :comments
 	has_and_belongs_to_many :categories
+	has_and_belongs_to_many :additionals
 	belongs_to :user
 
 	#Metodo que actualiza las visitas

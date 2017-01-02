@@ -2,11 +2,15 @@
 <div class="about">
   <% @categories.each do |category| %>
      <div class="container">
+      <%if category.has_service? %>
        <h3><%= category.name %></h3>
+      <%end%>
        <div class="about-grids">
         <% category.services.published.each do |service| %>
           <div class="col-md-2 about-grid">
-            <img src="images/ab1.jpg" class="img-responsive" alt=""/>
+            <div class="container-service-index">
+              <%= image_tag service.photo.url, class: "img-responsive" %>
+            </div>
             <%= link_to service_path(service) do %>
               <h4 class="text-center"><%= service.name %></h4>
             <% end %>
