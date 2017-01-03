@@ -144,3 +144,28 @@ ERROR:  cached plan must not change result type
 STATEMENT:  SELECT "services".* FROM "services" INNER JOIN "categories_services" ON "services"."id" = "categories_services"."service_id" WHERE "categories_services"."category_id" = $1
 ERROR:  cached plan must not change result type
 STATEMENT:  SELECT "services".* FROM "services" INNER JOIN "categories_services" ON "services"."id" = "categories_services"."service_id" WHERE "categories_services"."category_id" = $1 AND "services"."state" = 'published'
+ERROR:  column services.title does not exist at character 45
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.title LIKE '%Santiago%' OR services.description LIKE '%Santiago%') AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.title does not exist at character 45
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.title LIKE '%Talca%' OR services.description LIKE '%Talca%') AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Talca%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Talca%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Santiago%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Santiago%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Talca%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Talca%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  column services.contry does not exist at character 45
+HINT:  Perhaps you meant to reference the column "services.country".
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Talca%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC

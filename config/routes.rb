@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+
+
   resources :services do
     # member do
     #   get 'publish'

@@ -11,13 +11,8 @@
                   
                       <img src="<%= service.photo %>" alt="" class="img-search">
                       <div class="caption">
-                          <h4><%= link_to truncate(service.title, length: 19), service_path(service) %></h4>
-                          <p><%= truncate(service.description, length: 150) %></p>
+                          <h4><%= link_to truncate(service.name, length: 19), service_path(service) %></h4>
 
-                      </div>
-                      <div class="ratings">
-                          <p class="pull-right"><%= service.visit_count%> visitas</p>
-                          <span><%= service.comments.count(:vote)%> veces calificado</span>
                       </div>
                   </div>
               </div>
