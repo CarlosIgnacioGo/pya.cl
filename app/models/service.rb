@@ -8,6 +8,7 @@ class Service < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :email, presence: true
+	validates :description, presence: true
 	validates :phone, presence: true
 	
 	#Metodo que actualiza las visitas

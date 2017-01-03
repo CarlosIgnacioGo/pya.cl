@@ -7,7 +7,8 @@
 
   <div class="form-group">
     <%= f.label :description, 'Descripción' %><br>
-    <%= f.text_area :description, class: 'form-control', style: 'width:70%;' %>
+    <%= f.text_area :description, class: "form-control #{field_class(@service, :description)}", style: 'width:70%;' %>
+    <span class="text-error"><%= field_text(@service, :description) %></span>
   </div>
 
   <div class="form-group">

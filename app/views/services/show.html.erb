@@ -90,14 +90,14 @@
                 <div class="row">
                   <div class="col-md-4">
                     <p>Fono :<a href="#"><%= @service.phone %></a></p>
-                    <p>Edad :<a href="#"><%= @service.age %></a></p>
+                    <p>Edad :<a href="#"><%= get_resource(@service.age) %></a></p>
                   </div>
                   <div class="col-md-4">
-                    <p>Peso :<a href="#"><%= @service.weight %></a></p>
-                    <p>Fuma :<a href="#"><%= @service.smoking %></a></p>
+                    <p>Peso :<a href="#"><%= get_resource(@service.weight) %></a></p>
+                    <p>Fuma :<a href="#"><%= get_select(@service.smoking) %></a></p>
                   </div>
                   <div class="col-md-4">
-                    <p>Depilación :<a href="#"><%= @service.hair_removal %></a></p>
+                    <p>Depilación :<a href="#"><%= get_select(@service.hair_removal) %></a></p>
                   </div>
                 </div>
               </div>
