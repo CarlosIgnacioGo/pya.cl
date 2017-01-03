@@ -6,6 +6,10 @@ class Service < ActiveRecord::Base
 	has_and_belongs_to_many :additionals
 	belongs_to :user
 
+	validates :name, presence: true
+	validates :email, presence: true
+	validates :phone, presence: true
+	
 	#Metodo que actualiza las visitas
 	def update_visit_count
 		self.update(visit_count: self.visit_count += 1)
@@ -28,6 +32,24 @@ class Service < ActiveRecord::Base
 		else
 			all
 		end
+	end
+
+	def count_photos
+		acum_photos = 0
+
+		if self.photo
+			acum_photos += 1
+		elsif self.photo_2
+			acum_photos += 1
+		elsif self.photo_3
+			acum_photos += 1
+		elsif self.photo_4
+			acum_photos += 1
+		elsif self.photo_5
+			acum_photos += 1
+		end
+
+		return acum_photos
 	end
 
 	aasm column: "state" do

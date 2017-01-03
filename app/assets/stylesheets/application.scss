@@ -16,6 +16,14 @@
  *= require_self
  */
 
+ .error{
+  border: 1px solid red !important;
+ }
+
+ .text-error{
+  color:red;
+ }
+
 .container-service-index{
   height: 160px;
   overflow: hidden;

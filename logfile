@@ -131,3 +131,12 @@ ERROR:  cached plan must not change result type
 STATEMENT:  SELECT  "services".* FROM "services" WHERE "services"."id" = $1 LIMIT 1
 ERROR:  cached plan must not change result type
 STATEMENT:  SELECT "services".* FROM "services" INNER JOIN "categories_services" ON "services"."id" = "categories_services"."service_id" WHERE "categories_services"."category_id" = $1 AND "services"."state" = 'published'
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+FATAL:  the database system is starting up
+LOG:  database system was shut down at 2017-01-02 20:43:49 CLST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -37,6 +37,8 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
+    @category = Category.all
+    @additionals = Additional.all
     @service = Service.new(service_params)
     @service.user = current_user
     
@@ -92,6 +94,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:name, :photo, :photo_2, :photo_3, :photo_4, :photo_5, :description, :email, :phone, :age, :weight, :price ,:smoking ,category_ids: [], additional_ids: [])
+      params.require(:service).permit(:name, :photo, :photo_2, :photo_3, :photo_4, :photo_5, :description, :email, :phone, :age, :weight, :price ,:hair_removal,:smoking ,category_ids: [], additional_ids: [])
     end
 end

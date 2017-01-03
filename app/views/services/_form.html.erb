@@ -1,27 +1,19 @@
 <%= form_for(@service, html: {:multipart => true}) do |f| %>
-  <% if @service.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
-      <ul>
-      <% @service.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="form-group">
     <%= f.label :name, 'Nombre' %><br>
-    <%= f.text_field :name, class: 'form-control', style: 'width:70%;' %>
+    <%= f.text_field :name, class: "form-control #{field_class(@service, :name)}", style: 'width:70%;' %>
+    <span class="text-error"><%= field_text(@service, :name) %></span>
   </div>
 
   <div class="form-group">
     <%= f.label :description, 'Descripción' %><br>
     <%= f.text_area :description, class: 'form-control', style: 'width:70%;' %>
   </div>
-  <div class="form-groupº">
+
+  <div class="form-group">
     <%= f.label :phone, 'Celular'%><br>
-    <%= f.text_field :phone, class: 'form-control' %>
+    <%= f.text_field :phone, class: "form-control #{field_class(@service, :phone)}" %>
+    <span class="text-error"><%= field_text(@service, :name) %></span>
   </div>
   <div class="form-group">
     <%= f.label :age, 'Edad'%><br>
@@ -37,7 +29,8 @@
   </div>
   <div class="form-group">
     <%= f.label :email, 'Correo Electronico' %><br>
-    <%= f.text_field :email, class: 'form-control', style: 'width:70%;' %>
+    <%= f.text_field :email, class: "form-control #{field_class(@service, :email)}", style: 'width:70%;' %>
+    <span class="text-error"><%= field_text(@service, :name) %></span>
   </div>
   <div class="form-group">
       <%= f.label :photo, class: 'label-file btn btn-primary photo_label_1' do %>
@@ -78,20 +71,24 @@
     <%= f.file_field :photo_5, class: 'input-file photo_5'%>
   </div>
   <div class="form-group">
-    <%= f.label :smoking %>
-    <%= f.select :smoking, ['No','Si'] %>
+    <%= f.label :smoking, '¿Fumas?' %>
+    <%= f.select :smoking, ['Selecciona', 'No','Si'] %>
+  </div>hair_removal
+  <div class="form-group">
+    <%= f.label :hair_removal , '¿Depilada?' %>
+    <%= f.select :hair_removal , ['Selecciona','Nada','Rebaje Corto', 'Completa'] %>
   </div>
   <div class="form-group">
-    <h3>Servicios que presta</h3>
+    <h3>Servicios que prestas</h3>
     <% @additionals.each do |additional| %>
-      <li>
+      <li style="display:inline;">
         <%= f.check_box 'additional_ids', {multiple: true}, additional.id, [] %>
-        <span><%=additional.name%></span>
+        <span style="margin-right:10px;"><%=additional.name%></span>
       </li>
     <%end%>
   </div>
   <div class="form-group">
-    <h3>Pon tu servicios en una o varios categorias</h3>
+    <h3>En que categorias te gustaria estar</h3>
     <% @category.each do |category| %>
       <li>
         <%= f.check_box 'category_ids', {multiple: true}, category.id, [] %>
