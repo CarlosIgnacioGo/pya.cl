@@ -16,6 +16,16 @@
  *= require_self
  */
 
+ .btn-pink{
+  background: #fa558f;
+  color: white;
+ }
+
+ .btn-pink:hover{
+  color: white;
+  background: #df4c7f;
+ }
+
  .error{
   border: 1px solid red !important;
  }

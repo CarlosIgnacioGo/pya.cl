@@ -169,3 +169,6 @@ STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%T
 ERROR:  column services.contry does not exist at character 45
 HINT:  Perhaps you meant to reference the column "services.country".
 STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.contry LIKE '%Talca%' ) AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC
+ERROR:  function ucase(character varying) does not exist at character 80
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+STATEMENT:  SELECT "services".* FROM "services" WHERE ((services.country LIKE '%talca%' OR UCASE(services.country) LIKE '%talca%' OR LCASE(services.country) LIKE '%talca%') AND state = 'published') AND "services"."state" = 'published'  ORDER BY "services"."visit_count" DESC

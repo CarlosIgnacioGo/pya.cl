@@ -2,27 +2,34 @@
 <div class="about">
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag root_path, :method => 'get', class: "input-group " do %>
-      <%= text_field_tag "input_search", nil, class: 'form-control' %>
+      <%= text_field_tag "input_search", nil, class: 'form-control', placeholder: 'Ingresa una cuidad para buscar' %>
       <span class="input-group-btn ">
-        <%= submit_tag "Buscar", class: "btn btn-primary" %>
+        <%= submit_tag "Buscar", class: "btn btn-pink" %>
       </span>
     <% end %>
   </div>
   
 
   <% if params[:input_search] %>
+    <br>
     <div class="container">
        <div class="about-grids">
-        <% @search.each do |service| %>
-          <div class="col-md-2 about-grid">
-            <div class="container-service-index">
-              <%= image_tag service.photo.url, class: "img-responsive" %>
+       <p>Servicios encontrados en: <%= params[:input_search]%> - <%=link_to 'Limpiar buscador', root_path%></p>
+       <br>
+         <% if @search.blank? %>
+          "No se encontro ningun servicio."
+         <%else%>
+          <% @search.each do |service| %>
+            <div class="col-md-2 about-grid">
+              <div class="container-service-index">
+                <%= image_tag service.photo.url, class: "img-responsive" %>
+              </div>
+              <%= link_to service_path(service) do %>
+                <h4 class="text-center"><%= service.name %></h4>
+              <% end %>
             </div>
-            <%= link_to service_path(service) do %>
-              <h4 class="text-center"><%= service.name %></h4>
-            <% end %>
-          </div>
-        <% end %>
+          <% end %>
+         <%end%>
        </div>
      </div>
   <%end%>
@@ -30,7 +37,7 @@
   <% @categories.each do |category| %>
      <div class="container">
       <%if category.has_service? %>
-       <h3><%= category.name %></h3>
+       <h3 id="<%= category.name %>"><%= category.name %></h3>
       <%end%>
        <div class="about-grids">
         <% category.services.published.each do |service| %>

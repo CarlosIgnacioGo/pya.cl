@@ -29,7 +29,7 @@ class Service < ActiveRecord::Base
 	#
 	def self.search(search)
 		if search.present?
-			where("(services.country LIKE ? ) AND state = 'published'","%#{search}%")			
+			where("(services.country LIKE ?  ) AND state = 'published'","%#{search}%")			
 		end
 	end
 
