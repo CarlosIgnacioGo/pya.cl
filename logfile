@@ -140,3 +140,7 @@ LOG:  database system was shut down at 2017-01-02 20:43:49 CLST
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "services".* FROM "services" INNER JOIN "categories_services" ON "services"."id" = "categories_services"."service_id" WHERE "categories_services"."category_id" = $1
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT "services".* FROM "services" INNER JOIN "categories_services" ON "services"."id" = "categories_services"."service_id" WHERE "categories_services"."category_id" = $1 AND "services"."state" = 'published'

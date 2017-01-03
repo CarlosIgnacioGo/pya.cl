@@ -1,5 +1,6 @@
 
 <div class="about">
+  <input type="text" id="input_search">
   <% @categories.each do |category| %>
      <div class="container">
       <%if category.has_service? %>
@@ -21,6 +22,14 @@
    <% end %>
 </div>
 
+<script>
+  // var tags = <%#= Service.order(:title).published.map(&:title).to_json.html_safe %>
 
+  var tags = ['Talca','Linares','Santiago']
+
+  $( "#input_search" ).autocomplete({
+    source: tags
+  });
+</script>
 
 
